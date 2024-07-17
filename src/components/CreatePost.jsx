@@ -31,7 +31,7 @@ export default function CreatePost() {
     reactionsElementDislikes.current.value = "";
     tagsElement.current.value = "";
     addPost(userId, postTitle, postBody, reactions, tags);
-    navigate("/")
+    navigate("/");
   };
   return (
     <div className="mini-container" onSubmit={handleSubmit}>

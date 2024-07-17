@@ -34,7 +34,6 @@ export default function Posts() {
         />
       )}
       {!fetching && postList.map((post) => <Post key={post.id} post={post} />)}
-      {!fetching && <Footer />}
     </div>
   );
 }
