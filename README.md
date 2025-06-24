@@ -28,7 +28,7 @@ Twooter is a dynamic and modern social media platform built for expression and e
 - 📱 Mobile app version  
 
 ## 🖼️ Preview  
-![Twooter Preview](https://i.postimg.cc/R0LsPqrQ/Screenshot-2025-06-24-183515.png)
+![Twooter Preview](https://i.postimg.cc/RVxPzcMQ/Screenshot-2025-06-24-183748.png)
 
 ## 📬 Connect  
 Have suggestions or feedback? Let’s connect!  
