@@ -33,5 +33,5 @@ Twooter is a dynamic and modern social media platform built for expression and e
 ## 📬 Connect  
 Have suggestions or feedback? Let’s connect!  
 📧 your-kanhaiaggarwal@gmail.com
-🌍 [Portfolio Website](https://your-portfolio-link.com)
+🌍 [Portfolio Website](https://kanhainya-portfolio.netlify.app/)
 
