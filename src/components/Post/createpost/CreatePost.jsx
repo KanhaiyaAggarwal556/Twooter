@@ -1,5 +1,5 @@
-import React, { useContext, useRef } from "react";
-import { PostList } from "../Store/post-list-store";
+import { useContext, useRef } from "react";
+import { PostList } from "@store/post-list-store";
 import { useNavigate } from "react-router-dom";
 
 export default function CreatePost() {

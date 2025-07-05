@@ -1,6 +1,8 @@
 import { createContext, useEffect, useReducer, useState } from "react";
-import React from "react";
-
+import PropTypes from "prop-types"; // <-- Add this import
+PostsProvider.propTypes = {
+  children: PropTypes.node.isRequired, // <-- Add this validation
+};
 export const PostList = createContext({
   postList: [],
   fetching: false,

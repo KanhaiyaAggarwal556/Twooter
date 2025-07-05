@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Post from "./post";
-import { PostList as PostListData } from "../Store/post-list-store";
-import WelcomeMessage from "./WelcomeMessage";
-import LoadingSpinner from "./LoadingSpinner";
-import Footer from "./Footer";
+import { PostList as PostListData } from "@store/post-list-store";
+import WelcomeMessage from "../../WelcomeMessage";
+import LoadingSpinner from "../../Loading/LoadingSpinner";
 export default function Posts() {
   const { postList, fetching } = useContext(PostListData);
   // const [datafetched,setDataFetched] = useState(false);

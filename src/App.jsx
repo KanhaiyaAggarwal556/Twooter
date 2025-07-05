@@ -1,9 +1,8 @@
 import "./App.css";
-import Header from "./components/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sidebar from "./components/Sidebar.jsx";
-import Footer from "./components/Footer.jsx";
-import { useState } from "react";
+import Sidebar from "./components/Sidebar/Sidebar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import PostsProvider from "./Store/post-list-store.jsx";
 import { Outlet } from "react-router-dom";
 function App() {

@@ -15,6 +15,10 @@ export default function Sidebar() {
     setTo("/aboutus");
     console.log(to);
   };
+  const handleClick4 = () => {
+    setTo("/contact-us");
+    console.log(to);
+  };
   return (
     <div>
       <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar">
@@ -65,6 +69,19 @@ export default function Sidebar() {
                 <use xlinkHref="#speedometer2"></use>
               </svg>
               About Us
+            </Link>
+          </li>
+          <li onClick={handleClick4}>
+            <Link
+              to="/contact-us"
+              className={`nav-link text-white ${
+                to === "/contact-us" && "active"
+              }`}
+            >
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#speedometer2"></use>
+              </svg>
+              Contact US
             </Link>
           </li>
         </ul>

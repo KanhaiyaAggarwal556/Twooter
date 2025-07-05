@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { AiFillDislike } from "react-icons/ai";
-import { VscEye } from "react-icons/vsc";
 import { AiFillLike } from "react-icons/ai";
+import PropTypes from "prop-types"; // <-- Add this import
+import { PostList } from "@store/post-list-store";
 
-import { PostList } from "../Store/post-list-store";
-export default function post({ post }) {
+export default function Post({ post }) {
   const { deletePost } = useContext(PostList);
   return (
     <>
@@ -55,3 +55,16 @@ export default function post({ post }) {
     </>
   );
 }
+Post.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    userId: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    reactions: PropTypes.shape({
+      likes: PropTypes.number,
+      dislikes: PropTypes.number,
+    }).isRequired,
+  }).isRequired,
+};
