@@ -21,8 +21,8 @@ export default function CreatePost() {
     const reactionsDislikes = reactionsElementDislikes.current.value;
     const reactions = {
       likes: reactionsLike,
-      dislikes: reactionsDislikes
-    }
+      dislikes: reactionsDislikes,
+    };
     const tags = tagsElement.current.value.split(" ");
     userIdElement.current.value = "";
     postTitleElement.current.value = "";

@@ -10,11 +10,11 @@ function App() {
   return (
     <PostsProvider>
       <div className="main">
-        <Sidebar/>
+        <Sidebar />
         <div className="body">
           <Header />
-          <Outlet/>
-          <Footer/>
+          <Outlet />
+          <Footer />
         </div>
       </div>
     </PostsProvider>

@@ -24,7 +24,6 @@ export default function Posts() {
   //     setDataFetched(true);
   // };
 
-  
   return (
     <div className="mini-container">
       {fetching && <LoadingSpinner />}
