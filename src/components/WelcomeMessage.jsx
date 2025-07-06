@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import PropTypes from "prop-types";
 
 export default function WelcomeMessage({ onGetPostClick }) {
   return (
@@ -9,16 +9,15 @@ export default function WelcomeMessage({ onGetPostClick }) {
           <p className="fs-5 mb-4">
             This is a very unique and interesting social media platform where
             you can relax and have fun. On this website, you can learn about
-            people's thoughts, get to know your friends, family, and the world.
+            people&#39;s thoughts, get to know your friends, family, and the world.
           </p>
-
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <button
               onClick={onGetPostClick}
               type="button"
               className="btn btn-outline-dark btn-lg px-4 me-sm-3 fw-bold"
             >
-              Custom button
+              View Posts
             </button>
           </div>
         </div>
@@ -26,3 +25,7 @@ export default function WelcomeMessage({ onGetPostClick }) {
     </div>
   );
 }
+
+WelcomeMessage.propTypes = {
+  onGetPostClick: PropTypes.func.isRequired,
+};
