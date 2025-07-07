@@ -11,7 +11,7 @@ export default function PostHeader({
 }) {
   return (
     <div className="post-header">
-      <div className="post-user-info" onClick={onUserClick}>
+      <div className="post-user-info" onClick={(e)=> e.stopPropagation(onUserClick)}>
         <UserAvatar user={post.user} size={40} />
         <div className="post-user-name">
           <strong>{post.user?.name || `user-${post.userId}`}</strong>
