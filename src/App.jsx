@@ -1,6 +1,6 @@
 import "./App.css";
-import Header from "./components/Header/Header.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import Header from "./components/Header/Header.jsx";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import PostsProvider from "./Store/post-list-store.jsx";
@@ -11,7 +11,7 @@ function App() {
       <div className="main">
         <Sidebar />
         <div className="body">
-          <Header />
+          {/* <Header /> */}
           <Outlet />
           <Footer />
         </div>
