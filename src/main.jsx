@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import CreatePost from "./components/Post/createpost/CreatePost.jsx";
-import Posts from "./components/Post/view_post/Posts.jsx";
+import Posts from "./components/Post/view_post/Posts/Posts.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import Login from "./components/Login/logIn.jsx";
 import SignUpForm from "./components/SignUp/Signup.jsx";
