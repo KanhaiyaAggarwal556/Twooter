@@ -1,8 +1,8 @@
 // components/Sections/HomeSection.js
 import PropTypes from 'prop-types';
-import Post from "../Single_Post/post";
-import WelcomeMessage from "../WelcomeMessage";
-import LoadingSpinner from "../Loading/LoadingSpinner";
+import Post from "../../Single_Post/post";
+import WelcomeMessage from "../../WelcomeMessage";
+import LoadingSpinner from "../../Loading/LoadingSpinner";
 
 const HomeSection = ({ isActive, fetching, postList }) => {
   return (
