@@ -8,7 +8,7 @@ const MobileToggleButton = ({ open, setOpen }) => (
     style={{ 
       top: 10, 
       left: 10, 
-      zIndex: 1051,
+      zIndex: 10,
       backgroundColor: SIDEBAR_CONFIG.backgroundColor,
       border: "1px solid #333",
       color: "#fff"

@@ -1,5 +1,5 @@
 // Search.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Search as SearchIcon, Hash, TrendingUp } from 'lucide-react';
 
 const SearchSuggestions = ({ suggestions, searchTerm, onSuggestionClick }) => {
@@ -41,6 +41,25 @@ const Search = ({
   onSuggestionClick,
   searchRef 
 }) => {
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setIsSearchFocused(false);
+      }
+    };
+
+    // Add event listener when dropdown is open
+    if (isSearchFocused) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    // Cleanup event listener
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSearchFocused, searchRef, setIsSearchFocused]);
+
   return (
     <div className="search-form" ref={searchRef}>
       <div className="search-container">

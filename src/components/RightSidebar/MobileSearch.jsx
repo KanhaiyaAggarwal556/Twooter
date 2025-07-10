@@ -1,4 +1,4 @@
-// MobileSearch.jsx - Fixed version with better styling and recommendations
+// MobileSearch.jsx - Fixed version
 import React, { useEffect, useRef } from 'react';
 import { Search as SearchIcon, X, Hash, TrendingUp } from 'lucide-react';
 
@@ -88,10 +88,15 @@ const MobileSearch = ({
     }
   };
 
+  // FIXED: Modified to not automatically close the search
   const handleSuggestionClick = (suggestion) => {
     console.log('Suggestion clicked:', suggestion);
+    // Set the search term to the clicked suggestion
+    setSearchTerm(suggestion);
+    // Call the parent's suggestion click handler
     onSuggestionClick(suggestion);
-    handleClose();
+    // Don't close immediately - let the parent component handle navigation
+    // The search overlay should remain open to show results or close when appropriate
   };
 
   const handleInputChange = (e) => {

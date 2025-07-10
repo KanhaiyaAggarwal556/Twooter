@@ -10,7 +10,6 @@ const SearchResults = ({ searchTerm, onBackToMain }) => {
           <ArrowLeft size={20} />
           Back
         </button>
-        <h2>Search Results</h2>
       </div>
       <div className="search-results">
         <div className="search-term-display">
