@@ -139,6 +139,11 @@ export default function LoginPage() {
     e.stopPropagation();
     navigate("/forgotpassword");
   }
+  const handleSignup = (e)=>{
+    e.preventDefault();
+    e.stopPropagation();
+    navigate("/signup");
+  }
   const currentSlideData = showcaseSlides[currentSlide];
 
   return (
@@ -287,9 +292,9 @@ export default function LoginPage() {
               <div className="signup-prompt">
                 <p className="signup-text">
                   Don't have an account?{" "}
-                  <a href="/signup" className="signup-link">
+                  <button onClick = {handleSignup} className="signup-link">
                     Create one now
-                  </a>
+                  </button>
                 </p>
               </div>
             </div>
