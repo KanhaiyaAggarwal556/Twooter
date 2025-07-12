@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FEATURES_DATA } from './constants/featuresData';
 import { fetchFeatureData } from './services/featureDataService';
-import MobilePopup from './components/MobilePopup';
 import FeatureGrid from './components/FeatureGrid';
 import ResultView from './components/ResultView';
 import "./FeaturePanel.css";
 
-const FeaturePanel = ({ onSearch, onBackToMain, searchTerm, isMobile = false, isQuickAccess = false }) => {
+const FeaturePanel = ({onBackToMain, isMobile = true, isQuickAccess = false }) => {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState(null);
   const [error, setError] = useState(null);
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
-  const [showMobilePopup, setShowMobilePopup] = useState(false);
 
   const handleFeatureClick = async (feature) => {
     console.log('=== FEATURE CLICKED ===', feature.name, { isMobile, isQuickAccess });
@@ -22,10 +20,6 @@ const FeaturePanel = ({ onSearch, onBackToMain, searchTerm, isMobile = false, is
     setIsLoading(true);
     setError(null);
     setSearchResults(null);
-    
-    if (isMobile) {
-      setShowMobilePopup(true);
-    }
     
     try {
       const data = await fetchFeatureData(feature);
@@ -69,17 +63,8 @@ const FeaturePanel = ({ onSearch, onBackToMain, searchTerm, isMobile = false, is
     setSearchResults(null);
     setIsLoading(false);
     setError(null);
-    setShowMobilePopup(false);
     setShowMobileDropdown(false);
     if (onBackToMain) onBackToMain();
-  };
-
-  const closeMobilePopup = () => {
-    setShowMobilePopup(false);
-    setSelectedFeature(null);
-    setSearchResults(null);
-    setIsLoading(false);
-    setError(null);
   };
 
   const handleRetry = () => {
@@ -92,62 +77,8 @@ const FeaturePanel = ({ onSearch, onBackToMain, searchTerm, isMobile = false, is
     setShowMobileDropdown(!showMobileDropdown);
   };
 
-  // Debug logging
-  useEffect(() => {
-    console.log('=== FEATURE PANEL STATE ===', {
-      isMobile,
-      showMobilePopup,
-      selectedFeature: selectedFeature?.name,
-      isLoading,
-      searchResults: !!searchResults,
-      error
-    });
-  }, [isMobile, showMobilePopup, selectedFeature, isLoading, searchResults, error]);
-
-  // Mobile Popup - Highest Priority
-  if (isMobile && showMobilePopup) {
-    return (
-      <MobilePopup 
-        show={showMobilePopup}
-        onClose={closeMobilePopup}
-        selectedFeature={selectedFeature}
-        isLoading={isLoading}
-        error={error}
-        searchResults={searchResults}
-        onRetry={handleRetry}
-        onShare={handleShare}
-        onRedirect={handleRedirect}
-      />
-    );
-  }
-
-  // Mobile Quick Access
-  if (isQuickAccess && isMobile) {
-    return (
-      <div className="mobile-quick-access">
-        <div className="quick-access-list">
-          {FEATURES_DATA.map((feature) => (
-            <button
-              key={feature.id}
-              className="quick-access-item"
-              onClick={() => handleFeatureClick(feature)}
-            >
-              <div className="quick-access-icon">
-                <feature.icon size={16} />
-              </div>
-              <div className="quick-access-content">
-                <span className="quick-access-title">{feature.name}</span>
-                <span className="quick-access-desc">{feature.description}</span>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  // Desktop search results
-  if (!isMobile && selectedFeature && (isLoading || searchResults || error)) {
+  // Show result view for both desktop and mobile when a feature is selected
+  if (selectedFeature && (isLoading || searchResults || error)) {
     return (
       <ResultView 
         selectedFeature={selectedFeature}
@@ -158,13 +89,14 @@ const FeaturePanel = ({ onSearch, onBackToMain, searchTerm, isMobile = false, is
         onRetry={handleRetry}
         onShare={handleShare}
         onRedirect={handleRedirect}
+        isMobile={isMobile} // Pass isMobile prop to ResultView for responsive styling
       />
     );
   }
 
-  // Default feature panel
+  // Default feature panel (grid or dropdown)
   return (
-    <div className={`feature-panel ${isMobile ? 'mobile-feature-panel' : ''}`}>
+    <div className={`feature-panel mobile-feature-panel}`}>
       <FeatureGrid 
         features={FEATURES_DATA}
         isMobile={isMobile}

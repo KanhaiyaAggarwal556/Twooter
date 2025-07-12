@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { Search as SearchIcon, X, Hash, TrendingUp } from 'lucide-react';
 
 const MobileSearchSuggestions = ({ suggestions, searchTerm, onSuggestionClick }) => {
-  console.log('MobileSearchSuggestions render:', { suggestions, searchTerm });
+  // console.log('MobileSearchSuggestions render:', { suggestions, searchTerm });
   
   if (!suggestions || suggestions.length === 0) {
     return (
@@ -53,44 +53,44 @@ const MobileSearch = ({
 }) => {
   const inputRef = useRef(null);
 
-  console.log('=== MOBILE SEARCH COMPONENT RENDER ===');
-  console.log('isMobileSearchOpen:', isMobileSearchOpen);
-  console.log('searchTerm:', searchTerm);
-  console.log('suggestions:', suggestions);
+  // console.log('=== MOBILE SEARCH COMPONENT RENDER ===');
+  // console.log('isMobileSearchOpen:', isMobileSearchOpen);
+  // console.log('searchTerm:', searchTerm);
+  // console.log('suggestions:', suggestions);
 
   useEffect(() => {
-    console.log('MobileSearch useEffect triggered, isMobileSearchOpen:', isMobileSearchOpen);
+    // console.log('MobileSearch useEffect triggered, isMobileSearchOpen:', isMobileSearchOpen);
     
     if (isMobileSearchOpen && inputRef.current) {
       // Focus the input when mobile search opens
       setTimeout(() => {
         inputRef.current.focus();
-        console.log('Input focused');
+        // console.log('Input focused');
       }, 100); // Reduced delay for better UX
     }
   }, [isMobileSearchOpen]);
 
   const handleClose = () => {
-    console.log('Closing mobile search');
+    // console.log('Closing mobile search');
     setIsMobileSearchOpen(false);
     setSearchTerm('');
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      console.log('Enter pressed on mobile search');
+      // console.log('Enter pressed on mobile search');
       onSearch(e);
       handleClose();
     }
     if (e.key === 'Escape') {
-      console.log('Escape pressed on mobile search');
+      // console.log('Escape pressed on mobile search');
       handleClose();
     }
   };
 
   // FIXED: Modified to not automatically close the search
   const handleSuggestionClick = (suggestion) => {
-    console.log('Suggestion clicked:', suggestion);
+    // console.log('Suggestion clicked:', suggestion);
     // Set the search term to the clicked suggestion
     setSearchTerm(suggestion);
     // Call the parent's suggestion click handler
@@ -100,7 +100,7 @@ const MobileSearch = ({
   };
 
   const handleInputChange = (e) => {
-    console.log('Input changed:', e.target.value);
+    // console.log('Input changed:', e.target.value);
     setSearchTerm(e.target.value);
   };
 
@@ -114,7 +114,7 @@ const MobileSearch = ({
 
   // If not open, don't render anything
   if (!isMobileSearchOpen) {
-    console.log('Mobile search is not open, not rendering');
+    // console.log('Mobile search is not open, not rendering');
     return null;
   }
 

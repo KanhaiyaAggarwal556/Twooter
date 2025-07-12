@@ -1,4 +1,4 @@
-// RightSidebar.jsx - Fixed with proper mobile feature panel props
+// RightSidebar.jsx - Updated to show Login/SignUp pages
 import React, { useState, useEffect, useRef } from 'react';
 import { Search as SearchIcon, User, Grid3X3, X } from 'lucide-react';
 import Search from './Search';
@@ -7,6 +7,9 @@ import MobileSearch from './MobileSearch';
 import SearchResults from './SearchResults';
 import FeaturePanel from './FeaturePanel/FeaturePanel';
 import { useSearch, useAuth } from './hooks';
+import ChatBot from './ChatBot';
+import Login from '../Account/Login';
+import SignUp from '../Account/SignUp';
 import './styles.css';
 
 const RightSidebar = () => {
@@ -16,6 +19,10 @@ const RightSidebar = () => {
   const [isMobileFeaturePanelOpen, setIsMobileFeaturePanelOpen] = useState(false);
   const [currentView, setCurrentView] = useState('main');
   const [searchResults, setSearchResults] = useState(null);
+  
+  // Add ChatBot state
+  const [isChatBotOpen, setIsChatBotOpen] = useState(false);
+  
   const mobileUserMenuRef = useRef(null);
   const mobileSearchRef = useRef(null);
   const mobileFeaturePanelRef = useRef(null);
@@ -36,10 +43,13 @@ const RightSidebar = () => {
     isUserMenuOpen,
     setIsUserMenuOpen,
     isLoggedIn,
-    handleLogin,
-    handleSignup,
     handleLogout
   } = useAuth();
+
+  // ChatBot toggle handler
+  const handleChatBotToggle = () => {
+    setIsChatBotOpen(!isChatBotOpen);
+  };
 
   // Enhanced back to main handler
   const handleBackToMain = () => {
@@ -51,9 +61,38 @@ const RightSidebar = () => {
     }
   };
 
+  // Login/SignUp handlers - Updated to show components
+  const handleLogin = () => {
+    setCurrentView('login');
+    setIsUserMenuOpen(false);
+    setIsMobileUserMenuOpen(false);
+    setIsMobileFeaturePanelOpen(false);
+  };
+
+  const handleSignup = () => {
+    setCurrentView('signup');
+    setIsUserMenuOpen(false);
+    setIsMobileUserMenuOpen(false);
+    setIsMobileFeaturePanelOpen(false);
+  };
+
+  // Handle successful login/signup
+  const handleLoginSuccess = (userData) => {
+    // Handle successful login - you can update auth state here
+    console.log('Login successful:', userData);
+    setCurrentView('main');
+    // You might want to update the auth state here
+  };
+
+  const handleSignupSuccess = (userData) => {
+    // Handle successful signup - you can update auth state here
+    console.log('Signup successful:', userData);
+    setCurrentView('main');
+    // You might want to update the auth state here
+  };
+
   // Enhanced search handler
   const handleSearch = async (query) => {
-    console.log('=== SEARCH TRIGGERED ===', query);
     setSearchTerm(query);
     setCurrentView('search');
     setIsMobileSearchOpen(false);
@@ -62,9 +101,7 @@ const RightSidebar = () => {
     try {
       const results = await originalHandleSearch(query);
       setSearchResults(results);
-      console.log('Search results set:', results);
     } catch (error) {
-      console.error('Search error:', error);
       setSearchResults({
         query: query,
         results: [
@@ -77,13 +114,11 @@ const RightSidebar = () => {
 
   // Enhanced search handler for feature panel
   const handleFeatureSearch = (query) => {
-    console.log('=== FEATURE SEARCH TRIGGERED ===', query);
     handleSearch(query);
   };
 
   // Enhanced suggestion click handler
   const handleSuggestionClickEnhanced = (suggestion) => {
-    console.log('=== SUGGESTION CLICKED ===', suggestion);
     handleSuggestionClick(suggestion);
     handleSearch(suggestion);
   };
@@ -93,7 +128,6 @@ const RightSidebar = () => {
     const checkMobile = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
-      console.log('Mobile check:', mobile, 'Window width:', window.innerWidth);
     };
 
     checkMobile();
@@ -105,7 +139,6 @@ const RightSidebar = () => {
   const handleMobileSearchOpen = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('=== MOBILE SEARCH BUTTON CLICKED ===');
     setIsMobileSearchOpen(true);
     setIsMobileFeaturePanelOpen(false);
   };
@@ -114,7 +147,6 @@ const RightSidebar = () => {
   const handleMobileUserMenuToggle = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('=== MOBILE USER MENU BUTTON CLICKED ===');
     setIsMobileUserMenuOpen(!isMobileUserMenuOpen);
     setIsMobileFeaturePanelOpen(false);
   };
@@ -123,7 +155,6 @@ const RightSidebar = () => {
   const handleMobileFeaturePanelToggle = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('=== MOBILE FEATURE PANEL BUTTON CLICKED ===');
     setIsMobileFeaturePanelOpen(!isMobileFeaturePanelOpen);
     setIsMobileUserMenuOpen(false);
   };
@@ -160,14 +191,12 @@ const RightSidebar = () => {
     e.preventDefault();
     e.stopPropagation();
     handleLogin();
-    setIsMobileUserMenuOpen(false);
   };
 
   const handleMobileSignup = (e) => {
     e.preventDefault();
     e.stopPropagation();
     handleSignup();
-    setIsMobileUserMenuOpen(false);
   };
 
   const handleMobileLogout = (e) => {
@@ -179,8 +208,6 @@ const RightSidebar = () => {
 
   // Enhanced main content renderer
   const renderMainContent = () => {
-    console.log('=== RENDERING MAIN CONTENT ===', { currentView, searchTerm, searchResults });
-    
     switch (currentView) {
       case 'search':
         return (
@@ -190,6 +217,22 @@ const RightSidebar = () => {
             onBackToMain={handleBackToMain}
           />
         );
+      case 'login':
+        return (
+          <Login 
+            onLoginSuccess={handleLoginSuccess}
+            onBackToMain={handleBackToMain}
+            onSwitchToSignup={handleSignup}
+          />
+        );
+      case 'signup':
+        return (
+          <SignUp 
+            onSignupSuccess={handleSignupSuccess}
+            onBackToMain={handleBackToMain}
+            onSwitchToLogin={handleLogin}
+          />
+        );
       case 'main':
       default:
         return (
@@ -197,7 +240,7 @@ const RightSidebar = () => {
             onSearch={handleFeatureSearch}
             onBackToMain={handleBackToMain}
             searchTerm={searchTerm}
-            isMobile={isMobile} // CRUCIAL: Pass isMobile prop
+            isMobile={isMobile}
           />
         );
     }
@@ -304,15 +347,15 @@ const RightSidebar = () => {
           onSuggestionClick={handleSuggestionClickEnhanced}
         />
 
-        {/* Mobile Main Content - Shows search results or feature panel */}
-        {currentView === 'search' && !isMobileSearchOpen && (
-          <div className="mobile-search-results">
+        {/* Mobile Main Content - Shows search results, login, signup, or feature panel */}
+        {(currentView === 'search' || currentView === 'login' || currentView === 'signup') && !isMobileSearchOpen && (
+          <div className="mobile-main-content">
             {renderMainContent()}
           </div>
         )}
 
         {/* Mobile Feature Panel Button - Floating at bottom right */}
-        <div className="mobile-feature-panel-wrapper" ref={mobileFeaturePanelRef}>
+        {/* <div className="mobile-feature-panel-wrapper" ref={mobileFeaturePanelRef}>
           <button
             className="mobile-feature-panel-button"
             onClick={handleMobileFeaturePanelToggle}
@@ -329,7 +372,6 @@ const RightSidebar = () => {
             {isMobileFeaturePanelOpen ? <X size={24} /> : <Grid3X3 size={24} />}
           </button>
 
-          {/* Mobile Feature Panel Overlay - FIXED */}
           {isMobileFeaturePanelOpen && (
             <div className="mobile-feature-panel-overlay">
               <div className="mobile-feature-panel-content">
@@ -344,19 +386,25 @@ const RightSidebar = () => {
                   </button>
                 </div>
                 <div className="mobile-feature-panel-body">
-                  {/* FIXED: Always render FeaturePanel with proper props for mobile */}
                   <FeaturePanel
                     onSearch={handleFeatureSearch}
                     onBackToMain={handleBackToMain}
                     searchTerm={searchTerm}
-                    isMobile={true} // CRUCIAL: Pass isMobile as true
-                    isQuickAccess={false} // Not quick access mode
+                    isMobile={true} 
+                    isQuickAccess={false}
                   />
                 </div>
               </div>
             </div>
           )}
-        </div>
+        </div> */}
+
+        {/* ChatBot for Mobile */}
+        <ChatBot
+          isOpen={isChatBotOpen}
+          onToggle={handleChatBotToggle}
+          position="bottom-left"
+        />
       </>
     );
   }
@@ -365,35 +413,44 @@ const RightSidebar = () => {
   // DESKTOP RENDER - Full functionality
   // ==========================================
   return (
-    <div className="right-sidebar">
-      {/* Desktop Header */}
-      <div className="right-sidebar__header">
-        <Search
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          isSearchFocused={isSearchFocused}
-          setIsSearchFocused={setIsSearchFocused}
-          onSearch={handleSearch}
-          suggestions={suggestions}
-          onSuggestionClick={handleSuggestionClickEnhanced}
-          searchRef={searchRef}
-        />
+    <>
+      <div className="right-sidebar">
+        {/* Desktop Header */}
+        <div className="right-sidebar__header">
+          <Search
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            isSearchFocused={isSearchFocused}
+            setIsSearchFocused={setIsSearchFocused}
+            onSearch={handleSearch}
+            suggestions={suggestions}
+            onSuggestionClick={handleSuggestionClickEnhanced}
+            searchRef={searchRef}
+          />
 
-        <UserAccount
-          isUserMenuOpen={isUserMenuOpen}
-          setIsUserMenuOpen={setIsUserMenuOpen}
-          isLoggedIn={isLoggedIn}
-          onLogin={handleLogin}
-          onSignup={handleSignup}
-          onLogout={handleLogout}
-        />
-      </div>
+          <UserAccount
+            isUserMenuOpen={isUserMenuOpen}
+            setIsUserMenuOpen={setIsUserMenuOpen}
+            isLoggedIn={isLoggedIn}
+            onLogin={handleLogin}
+            onSignup={handleSignup}
+            onLogout={handleLogout}
+          />
+        </div>
 
-      {/* Desktop Content */}
-      <div className="right-sidebar__content">
-        {renderMainContent()}
+        {/* Desktop Content */}
+        <div className="right-sidebar__content">
+          {renderMainContent()}
+        </div>
       </div>
-    </div>
+      
+      {/* ChatBot for Desktop */}
+      <ChatBot
+        isOpen={isChatBotOpen}
+        onToggle={handleChatBotToggle}
+        position="bottom-right"
+      />
+    </>
   );
 };
 

@@ -9,16 +9,18 @@ const ResultView = ({
   onBack, 
   onRetry, 
   onShare, 
-  onRedirect 
+  onRedirect,
+  isMobile = false
 }) => {
   return (
-    <div className="feature-result-container">
+    <div className={`feature-result-container ${isMobile ? 'mobile' : 'desktop'}`}>
       <div className="result-header">
         <button 
           onClick={onBack} 
           className="close-button"
+          aria-label="Close"
         >
-          <X size={20} />
+          <X size={isMobile ? 18 : 20} />
         </button>
       </div>
 
@@ -42,10 +44,10 @@ const ResultView = ({
               Try Again
             </button>
           </div>
-        ) : (
+        ) : searchResults ? (
           <div className="search-result">
             <div className="result-icon">
-              <selectedFeature.icon size={24} />
+              <selectedFeature.icon size={isMobile ? 20 : 24} />
             </div>
             {searchResults.imageUrl && (
               <img 
@@ -61,7 +63,7 @@ const ResultView = ({
             <div className="result-text">
               {searchResults.content}
             </div>
-            <div className="action-buttons">
+            <div className={`action-buttons ${isMobile ? 'mobile-buttons' : 'desktop-buttons'}`}>
               <button 
                 onClick={onRetry}
                 className="try-again-button"
@@ -84,7 +86,7 @@ const ResultView = ({
               </button>
             </div>
           </div>
-        )}
+        ) : null}
       </div>
     </div>
   );

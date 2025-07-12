@@ -1,4 +1,4 @@
-// UserAccount.jsx
+// UserAccount.jsx - Updated to work with Login/SignUp pages
 import React from 'react';
 import { User, LogIn, UserPlus, LogOut } from 'lucide-react';
 
@@ -10,11 +10,31 @@ const UserAccount = ({
   onSignup, 
   onLogout 
 }) => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onLogin();
+  };
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onSignup();
+  };
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onLogout();
+  };
+
   return (
     <div className="user-menu">
       <button
         className="user-icon-button"
         onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+        type="button"
+        aria-label="User menu"
       >
         <User size={24} />
       </button>
@@ -26,18 +46,18 @@ const UserAccount = ({
               <div className="user-info">
                 <span>Welcome, User!</span>
               </div>
-              <button onClick={onLogout} className="menu-item">
+              <button onClick={handleLogout} className="menu-item" type="button">
                 <LogOut size={16} />
                 Logout
               </button>
             </>
           ) : (
             <>
-              <button onClick={onLogin} className="menu-item">
+              <button onClick={handleLogin} className="menu-item" type="button">
                 <LogIn size={16} />
                 Login
               </button>
-              <button onClick={onSignup} className="menu-item">
+              <button onClick={handleSignup} className="menu-item" type="button">
                 <UserPlus size={16} />
                 Sign Up
               </button>
