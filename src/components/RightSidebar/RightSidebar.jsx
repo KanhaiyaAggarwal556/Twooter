@@ -8,8 +8,7 @@ import SearchResults from './SearchResults';
 import FeaturePanel from './FeaturePanel/FeaturePanel';
 import { useSearch, useAuth } from './hooks';
 import ChatBot from './ChatBot';
-import Login from '../Account/Login';
-import SignUp from '../Account/SignUp';
+import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
 const RightSidebar = () => {
@@ -26,6 +25,7 @@ const RightSidebar = () => {
   const mobileUserMenuRef = useRef(null);
   const mobileSearchRef = useRef(null);
   const mobileFeaturePanelRef = useRef(null);
+  const navigate = useNavigate();
 
   const {
     searchTerm,
@@ -190,13 +190,13 @@ const RightSidebar = () => {
   const handleMobileLogin = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    handleLogin();
+    navigate("/login")
   };
 
   const handleMobileSignup = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    handleSignup();
+    navigate("/signup")
   };
 
   const handleMobileLogout = (e) => {

@@ -1,25 +1,27 @@
 // UserAccount.jsx - Updated to work with Login/SignUp pages
 import React from 'react';
 import { User, LogIn, UserPlus, LogOut } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const UserAccount = ({ 
   isUserMenuOpen, 
   setIsUserMenuOpen, 
   isLoggedIn, 
-  onLogin, 
-  onSignup, 
   onLogout 
 }) => {
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    onLogin();
+    navigate("/login")
+    // onLogin();
   };
 
   const handleSignup = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    onSignup();
+    navigate("/signup")
+    // onSignup();
   };
 
   const handleLogout = (e) => {
