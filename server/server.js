@@ -563,8 +563,13 @@ app.delete("/api/posts/:id", async (req, res) => {
 });
 
 // ✅ ADD THIS: Serve React app for all non-API routes (SPA routing)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+app.get('/*', (req, res) => {
+  // Only serve index.html for non-API routes
+  if (!req.path.startsWith('/api/')) {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  } else {
+    res.status(404).json({ error: 'API endpoint not found' });
+  }
 });
 
 // Health check endpoint
