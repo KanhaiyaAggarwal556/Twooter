@@ -169,6 +169,390 @@
         "accentColor": "#FF4757",
         "backgroundType": "gradient"
       }
+    },
+    {
+      "userId": "user303",
+      "username": "bookworm_lisa",
+      "displayName": "Lisa Rodriguez",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=300&fit=crop",
+      "email": "lisa.rodriguez@email.com",
+      "contactNumber": "+1-555-0303",
+      "bio": "Literature teacher & avid reader 📚 Currently reading my way through classic novels. Book recommendations welcome!",
+      "location": "Portland, OR",
+      "website": "https://lisareadsbooks.com",
+      "joinDate": "2023-04-12T00:00:00Z",
+      "isVerified": false,
+      "isOnline": false,
+      "lastSeen": "2024-01-16T09:20:00Z",
+      "socialStats": {
+        "followers": 892,
+        "following": 1203,
+        "posts": 1
+      },
+      "interests": ["reading", "literature", "teaching", "writing"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": false,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "classic",
+        "accentColor": "#8B4513",
+        "backgroundType": "image"
+      }
+    },
+    {
+      "userId": "user404",
+      "username": "urban_artist",
+      "displayName": "Marcus Thompson",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=300&fit=crop",
+      "email": "marcus.art@email.com",
+      "contactNumber": "+1-555-0404",
+      "bio": "Street artist & muralist 🎨 Bringing color to urban spaces. Commission work available!",
+      "location": "Brooklyn, NY",
+      "website": "https://marcusthompsonart.com",
+      "joinDate": "2022-12-03T00:00:00Z",
+      "isVerified": true,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T15:30:00Z",
+      "socialStats": {
+        "followers": 6789,
+        "following": 345,
+        "posts": 1
+      },
+      "interests": ["street art", "murals", "urban culture", "spray painting"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "vibrant",
+        "accentColor": "#FF6B35",
+        "backgroundType": "gradient"
+      }
+    },
+    {
+      "userId": "user505",
+      "username": "garden_goddess",
+      "displayName": "Emma Clarke",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=300&fit=crop",
+      "email": "emma.garden@email.com",
+      "contactNumber": "+1-555-0505",
+      "bio": "Sustainable gardening enthusiast 🌱 Growing organic vegetables and flowers. Sharing tips for eco-friendly living!",
+      "location": "Boulder, CO",
+      "website": "https://emmasgreenthumb.blog",
+      "joinDate": "2023-02-28T00:00:00Z",
+      "isVerified": false,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T13:45:00Z",
+      "socialStats": {
+        "followers": 2341,
+        "following": 567,
+        "posts": 1
+      },
+      "interests": ["gardening", "sustainability", "organic farming", "composting"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": false,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "earth",
+        "accentColor": "#228B22",
+        "backgroundType": "image"
+      }
+    },
+    {
+      "userId": "user606",
+      "username": "music_maven",
+      "displayName": "David Kim",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=300&fit=crop",
+      "email": "david.music@email.com",
+      "contactNumber": "+1-555-0606",
+      "bio": "Indie musician & producer 🎵 Creating sounds that tell stories. New EP coming soon!",
+      "location": "Nashville, TN",
+      "website": "https://davidkimmusic.com",
+      "joinDate": "2023-06-18T00:00:00Z",
+      "isVerified": true,
+      "isOnline": false,
+      "lastSeen": "2024-01-16T11:00:00Z",
+      "socialStats": {
+        "followers": 4567,
+        "following": 234,
+        "posts": 1
+      },
+      "interests": ["music production", "indie music", "songwriting", "guitar"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "music",
+        "accentColor": "#9932CC",
+        "backgroundType": "gradient"
+      }
+    },
+    {
+      "userId": "user707",
+      "username": "travel_tales",
+      "displayName": "Sophie Anderson",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=300&fit=crop",
+      "email": "sophie.travel@email.com",
+      "contactNumber": "+1-555-0707",
+      "bio": "Solo traveler exploring the world one city at a time ✈️ Currently backpacking through Europe. Travel tips & stories!",
+      "location": "Currently in: Prague, Czech Republic",
+      "website": "https://sophiesjourney.travel",
+      "joinDate": "2022-09-14T00:00:00Z",
+      "isVerified": false,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T16:15:00Z",
+      "socialStats": {
+        "followers": 3456,
+        "following": 789,
+        "posts": 1
+      },
+      "interests": ["solo travel", "backpacking", "cultural exploration", "budget travel"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": false,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "wanderlust",
+        "accentColor": "#20B2AA",
+        "backgroundType": "image"
+      }
+    },
+    {
+      "userId": "user808",
+      "username": "pet_vet_dr",
+      "displayName": "Dr. Rachel Martinez",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1200&h=300&fit=crop",
+      "email": "dr.rachel@email.com",
+      "contactNumber": "+1-555-0808",
+      "bio": "Veterinarian passionate about animal health 🐾 Sharing pet care tips and adorable patient stories!",
+      "location": "San Diego, CA",
+      "website": "https://drmartinezveterinary.com",
+      "joinDate": "2023-08-07T00:00:00Z",
+      "isVerified": true,
+      "isOnline": false,
+      "lastSeen": "2024-01-16T08:30:00Z",
+      "socialStats": {
+        "followers": 5678,
+        "following": 123,
+        "posts": 1
+      },
+      "interests": ["veterinary medicine", "animal care", "pet health", "animal rescue"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "caring",
+        "accentColor": "#FF69B4",
+        "backgroundType": "solid"
+      }
+    },
+    {
+      "userId": "user909",
+      "username": "yoga_zen_life",
+      "displayName": "Priya Sharma",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1494790108755-2616b9f8e536?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1506629905607-d5f3b4c1c1b8?w=1200&h=300&fit=crop",
+      "email": "priya.yoga@email.com",
+      "contactNumber": "+1-555-0909",
+      "bio": "Certified yoga instructor & mindfulness coach 🧘‍♀️ Helping you find balance in body, mind, and spirit. Online classes available!",
+      "location": "Santa Monica, CA",
+      "website": "https://priyayogazen.com",
+      "joinDate": "2023-01-15T00:00:00Z",
+      "isVerified": true,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T07:15:00Z",
+      "socialStats": {
+        "followers": 7234,
+        "following": 456,
+        "posts": 1
+      },
+      "interests": ["yoga", "meditation", "mindfulness", "wellness"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "zen",
+        "accentColor": "#87CEEB",
+        "backgroundType": "gradient"
+      }
+    },
+    {
+      "userId": "user1010",
+      "username": "coffee_connoisseur",
+      "displayName": "Roberto Silva",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&h=300&fit=crop",
+      "email": "roberto.coffee@email.com",
+      "contactNumber": "+1-555-1010",
+      "bio": "Master barista & coffee roaster ☕ Exploring the perfect brew one cup at a time. Coffee education & tastings!",
+      "location": "Portland, OR",
+      "website": "https://robertoscoffee.com",
+      "joinDate": "2022-10-20T00:00:00Z",
+      "isVerified": false,
+      "isOnline": false,
+      "lastSeen": "2024-01-16T06:45:00Z",
+      "socialStats": {
+        "followers": 3421,
+        "following": 289,
+        "posts": 1
+      },
+      "interests": ["coffee", "roasting", "brewing", "latte art"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "warm",
+        "accentColor": "#8B4513",
+        "backgroundType": "image"
+      }
+    },
+    {
+      "userId": "user1111",
+      "username": "space_explorer",
+      "displayName": "Dr. Elena Vasquez",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=1200&h=300&fit=crop",
+      "email": "elena.space@email.com",
+      "contactNumber": "+1-555-1111",
+      "bio": "Astrophysicist & space enthusiast 🚀 Sharing the wonders of the cosmos and latest space discoveries!",
+      "location": "Houston, TX",
+      "website": "https://elenaspacescience.com",
+      "joinDate": "2023-05-30T00:00:00Z",
+      "isVerified": true,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T14:20:00Z",
+      "socialStats": {
+        "followers": 12456,
+        "following": 567,
+        "posts": 1
+      },
+      "interests": ["astronomy", "space exploration", "physics", "NASA"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": false,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "cosmic",
+        "accentColor": "#4B0082",
+        "backgroundType": "image"
+      }
+    },
+    {
+      "userId": "user1212",
+      "username": "vintage_hunter",
+      "displayName": "Charlotte Green",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1558618047-3c8c4d8d3d9c?w=1200&h=300&fit=crop",
+      "email": "charlotte.vintage@email.com",
+      "contactNumber": "+1-555-1212",
+      "bio": "Vintage fashion enthusiast & thrift store treasure hunter 🏪 Sustainable style advocate. Find unique pieces daily!",
+      "location": "Charleston, SC",
+      "website": "https://charlottesvintage.shop",
+      "joinDate": "2023-09-12T00:00:00Z",
+      "isVerified": false,
+      "isOnline": false,
+      "lastSeen": "2024-01-16T11:30:00Z",
+      "socialStats": {
+        "followers": 4567,
+        "following": 1234,
+        "posts": 1
+      },
+      "interests": ["vintage fashion", "thrifting", "sustainable style", "antiques"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": false,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "vintage",
+        "accentColor": "#DDA0DD",
+        "backgroundType": "image"
+      }
+    },
+    {
+      "userId": "user1313",
+      "username": "ocean_diver",
+      "displayName": "Jake Morrison",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=300&fit=crop",
+      "email": "jake.diving@email.com",
+      "contactNumber": "+1-555-1313",
+      "bio": "Marine biologist & scuba diving instructor 🌊 Exploring underwater worlds and marine conservation advocate!",
+      "location": "Key Largo, FL",
+      "website": "https://jakeoceandiving.com",
+      "joinDate": "2022-08-05T00:00:00Z",
+      "isVerified": true,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T16:00:00Z",
+      "socialStats": {
+        "followers": 8901,
+        "following": 345,
+        "posts": 1
+      },
+      "interests": ["scuba diving", "marine biology", "ocean conservation", "underwater photography"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "ocean",
+        "accentColor": "#008B8B",
+        "backgroundType": "gradient"
+      }
+    },
+    {
+      "userId": "user1414",
+      "username": "craft_maker",
+      "displayName": "Hannah Wilson",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1200&h=300&fit=crop",
+      "email": "hannah.crafts@email.com",
+      "contactNumber": "+1-555-1414",
+      "bio": "DIY craft enthusiast & handmade jewelry designer ✨ Creating unique pieces with love. Custom orders welcome!",
+      "location": "Asheville, NC",
+      "website": "https://hannahhandmade.etsy.com",
+      "joinDate": "2023-11-03T00:00:00Z",
+      "isVerified": false,
+      "isOnline": false,
+      "lastSeen": "2024-01-16T13:10:00Z",
+      "socialStats": {
+        "followers": 2789,
+        "following": 890,
+        "posts": 1
+      },
+      "interests": ["jewelry making", "DIY crafts", "handmade goods", "upcycling"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "crafty",
+        "accentColor": "#FF1493",
+        "backgroundType": "solid"
+      }
     }
   ],
   "PostData": [
@@ -348,6 +732,542 @@
         }
       ],
       "timestamp": "2024-01-16T06:30:00Z"
+    },
+    {
+      "id": 6,
+      "userId": "user303",
+      "title": "Book club discussion",
+      "body": "Just finished 'The Seven Husbands of Evelyn Hugo' and I'm absolutely blown away! The storytelling is incredible. Who else has read this masterpiece?",
+      "reactions": {
+        "likes": 56,
+        "dislikes": 0,
+        "shares": 18,
+        "saves": 34
+      },
+      "tags": ["books", "reading", "bookclub", "recommendations"],
+      "views": 145,
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500",
+        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=500"
+      ],
+      "videos": null,
+      "location": null,
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 7,
+          "userId": "user404",
+          "body": "I've been meaning to read this! Adding it to my list now.",
+          "timestamp": "2024-01-16T10:45:00Z",
+          "reactions": {
+            "likes": 3,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 8,
+          "userId": "user505",
+          "body": "One of my favorites! Have you read any other Taylor Jenkins Reid books?",
+          "timestamp": "2024-01-16T12:20:00Z",
+          "reactions": {
+            "likes": 5,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T09:30:00Z"
+    },
+    {
+      "id": 7,
+      "userId": "user404",
+      "title": "New mural in progress",
+      "body": "Working on a massive mural in downtown Brooklyn! This piece is about community resilience and hope. Can't wait to share the finished result!",
+      "reactions": {
+        "likes": 134,
+        "dislikes": 2,
+        "shares": 42,
+        "saves": 78
+      },
+      "tags": ["streetart", "mural", "brooklyn", "community", "art"],
+      "views": 567,
+      "images": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500",
+        "https://images.unsplash.com/photo-1549490349-8643362247b5?w=500",
+        "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=500"
+      ],
+      "videos": ["https://sample-videos.com/zip/10/mp4/mp4-20-art-process.mp4"],
+      "location": "Brooklyn, NY",
+      "isPinned": true,
+      "comments": [
+        {
+          "id": 9,
+          "userId": "user707",
+          "body": "This is absolutely stunning! Brooklyn is lucky to have your art.",
+          "timestamp": "2024-01-16T14:10:00Z",
+          "reactions": {
+            "likes": 8,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 10,
+          "userId": "user808",
+          "body": "Amazing work! How long does a mural this size typically take?",
+          "timestamp": "2024-01-16T15:45:00Z",
+          "reactions": {
+            "likes": 4,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T13:00:00Z"
+    },
+    {
+      "id": 8,
+      "userId": "user505",
+      "title": "Spring garden prep",
+      "body": "Getting my garden ready for spring! Started my seedlings indoors and they're already sprouting. Nothing beats the satisfaction of growing your own food 🌱",
+      "reactions": {
+        "likes": 89,
+        "dislikes": 1,
+        "shares": 23,
+        "saves": 45
+      },
+      "tags": ["gardening", "spring", "seedlings", "organic", "sustainable"],
+      "views": 234,
+      "images": [
+        "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500",
+        "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=500",
+        "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500"
+      ],
+      "videos": null,
+      "location": "Boulder, CO",
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 11,
+          "userId": "user303",
+          "body": "I'm inspired to start my own herb garden! Any beginner tips?",
+          "timestamp": "2024-01-16T16:30:00Z",
+          "reactions": {
+            "likes": 6,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 12,
+          "userId": "user456",
+          "body": "Your garden photos are always so beautiful! Can't wait to see the full bloom.",
+          "timestamp": "2024-01-16T17:15:00Z",
+          "reactions": {
+            "likes": 3,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T14:20:00Z"
+    },
+    {
+      "id": 9,
+      "userId": "user606",
+      "title": "Studio session vibes",
+      "body": "Late night recording session for my upcoming EP. There's something magical about creating music when the world is quiet. Preview coming soon!",
+      "reactions": {
+        "likes": 167,
+        "dislikes": 3,
+        "shares": 56,
+        "saves": 89
+      },
+      "tags": ["music", "recording", "studio", "newmusic", "indie"],
+      "views": 445,
+      "images": [
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500"
+      ],
+      "videos": ["https://sample-videos.com/zip/10/mp4/mp4-25-studio-session.mp4"],
+      "location": "Nashville, TN",
+      "isPinned": true,
+      "comments": [
+        {
+          "id": 13,
+          "userId": "user202",
+          "body": "Can't wait to hear it! Your last single was incredible.",
+          "timestamp": "2024-01-16T18:00:00Z",
+          "reactions": {
+            "likes": 12,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 14,
+          "userId": "user789",
+          "body": "Studio setup looks professional! What gear are you using?",
+          "timestamp": "2024-01-16T19:30:00Z",
+          "reactions": {
+            "likes": 7,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T17:45:00Z"
+    },
+    {
+      "id": 10,
+      "userId": "user707",
+      "title": "Prague wanderings",
+      "body": "Exploring the cobblestone streets of Prague today! The architecture here is absolutely breathtaking. Every corner tells a story from centuries past.",
+      "reactions": {
+        "likes": 203,
+        "dislikes": 0,
+        "shares": 67,
+        "saves": 123
+      },
+      "tags": ["travel", "prague", "architecture", "europe", "backpacking"],
+      "views": 678,
+      "images": [
+        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500",
+        "https://images.unsplash.com/photo-1541849546-216549ae216d?w=500",
+        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500",
+        "https://images.unsplash.com/photo-1541849546-216549ae216d?w=500"
+      ],
+      "videos": null,
+      "location": "Prague, Czech Republic",
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 15,
+          "userId": "user101",
+          "body": "Prague is on my bucket list! These photos are making me want to book a trip right now.",
+          "timestamp": "2024-01-16T20:15:00Z",
+          "reactions": {
+            "likes": 9,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 16,
+          "userId": "user404",
+          "body": "The colors in these photos are amazing! What camera are you using?",
+          "timestamp": "2024-01-16T21:00:00Z",
+          "reactions": {
+            "likes": 4,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T19:00:00Z"
+    },
+    {
+      "id": 11,
+      "userId": "user808",
+      "title": "Pet health tip Tuesday",
+      "body": "Reminder: Regular dental care is crucial for your pet's health! Just like humans, pets need their teeth cleaned regularly to prevent serious health issues.",
+      "reactions": {
+        "likes": 234,
+        "dislikes": 1,
+        "shares": 89,
+        "saves": 156
+      },
+      "tags": ["petcare", "veterinary", "health", "tips", "dental"],
+      "views": 890,
+      "images": [
+        "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=500",
+        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=500"
+      ],
+      "videos": null,
+      "location": null,
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 17,
+          "userId": "user505",
+          "body": "Thank you for this reminder! How often should I brush my dog's teeth?",
+          "timestamp": "2024-01-16T22:30:00Z",
+          "reactions": {
+            "likes": 15,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 18,
+          "userId": "user202",
+          "body": "Great advice! My cat hates teeth brushing. Any tips for reluctant pets?",
+          "timestamp": "2024-01-16T23:45:00Z",
+          "reactions": {
+            "likes": 8,
+            "dislikes": 0
+          }
+        } 
+      ],
+      "timestamp": "2024-01-16T21:30:00Z"
+    },
+    {
+      "id": 12,
+      "userId": "user909",
+      "title": "Morning meditation practice",
+      "body": "Started my day with 30 minutes of sunrise meditation on the beach. The sound of waves and gentle breeze created the perfect peaceful atmosphere 🧘‍♀️",
+      "reactions": {
+        "likes": 198,
+        "dislikes": 0,
+        "shares": 45,
+        "saves": 87
+      },
+      "tags": ["meditation", "mindfulness", "sunrise", "beach", "peace"],
+      "views": 543,
+      "images": [
+        "https://images.unsplash.com/photo-1506629905607-d5f3b4c1c1b8?w=500",
+        "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=500"
+      ],
+      "videos": ["https://sample-videos.com/zip/10/mp4/mp4-30-meditation.mp4"],
+      "location": "Santa Monica Beach, CA",
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 19,
+          "userId": "user808",
+          "body": "This looks so peaceful! I need to try beach meditation.",
+          "timestamp": "2024-01-16T08:30:00Z",
+          "reactions": {
+            "likes": 12,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 20,
+          "userId": "user505",
+          "body": "Your meditation posts always inspire me to start my day mindfully!",
+          "timestamp": "2024-01-16T09:45:00Z",
+          "reactions": {
+            "likes": 8,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T07:00:00Z"
+    },
+    {
+      "id": 13,
+      "userId": "user1010",
+      "title": "Perfect latte art",
+      "body": "Spent the morning perfecting my rosetta technique! After 200+ attempts, I finally nailed this beautiful leaf pattern. Coffee is truly an art form ☕",
+      "reactions": {
+        "likes": 145,
+        "dislikes": 2,
+        "shares": 38,
+        "saves": 62
+      },
+      "tags": ["coffee", "latteart", "barista", "craftsmanship", "perfection"],
+      "views": 389,
+      "images": [
+        "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=500",
+        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500",
+        "https://images.unsplash.com/photo-1524350876685-274059332603?w=500"
+      ],
+      "videos": null,
+      "location": "Portland, OR",
+      "isPinned": true,
+      "comments": [
+        {
+          "id": 21,
+          "userId": "user404",
+          "body": "That's absolutely beautiful! The precision is incredible.",
+          "timestamp": "2024-01-16T10:20:00Z",
+          "reactions": {
+            "likes": 15,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 22,
+          "userId": "user303",
+          "body": "I need to visit your café! This looks amazing.",
+          "timestamp": "2024-01-16T11:15:00Z",
+          "reactions": {
+            "likes": 7,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T09:15:00Z"
+    },
+    {
+      "id": 14,
+      "userId": "user1111",
+      "title": "Mars rover discovery",
+      "body": "Exciting news from Mars! Recent rover data shows evidence of ancient water flow patterns. This could be a game-changer for understanding Martian geology 🚀",
+      "reactions": {
+        "likes": 456,
+        "dislikes": 5,
+        "shares": 123,
+        "saves": 234
+      },
+      "tags": ["mars", "space", "discovery", "science", "astronomy"],
+      "views": 1234,
+      "images": [
+        "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=500",
+        "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=500"
+      ],
+      "videos": null,
+      "location": null,
+      "isPinned": true,
+      "comments": [
+        {
+          "id": 23,
+          "userId": "user789",
+          "body": "This is fascinating! Could this lead to finding signs of ancient life?",
+          "timestamp": "2024-01-16T15:30:00Z",
+          "reactions": {
+            "likes": 34,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 24,
+          "userId": "user606",
+          "body": "Space discoveries always blow my mind. Thanks for sharing!",
+          "timestamp": "2024-01-16T16:45:00Z",
+          "reactions": {
+            "likes": 18,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T14:00:00Z"
+    },
+    {
+      "id": 15,
+      "userId": "user1212",
+      "title": "Vintage treasure haul",
+      "body": "Hit the jackpot at an estate sale today! Found a 1950s silk scarf, vintage Pyrex bowls, and this gorgeous beaded handbag. Sustainable shopping at its finest! 🏪",
+      "reactions": {
+        "likes": 267,
+        "dislikes": 1,
+        "shares": 89,
+        "saves": 156
+      },
+      "tags": ["vintage", "thrifting", "sustainable", "fashion", "treasures"],
+      "views": 678,
+      "images": [
+        "https://images.unsplash.com/photo-1558618047-3c8c4d8d3d9c?w=500",
+        "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=500",
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+        "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500"
+      ],
+      "videos": null,
+      "location": "Charleston, SC",
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 25,
+          "userId": "user101",
+          "body": "That beaded handbag is stunning! Do you plan to resell or keep it?",
+          "timestamp": "2024-01-16T17:20:00Z",
+          "reactions": {
+            "likes": 23,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 26,
+          "userId": "user707",
+          "body": "I love your vintage finds! Teaching me to appreciate sustainable shopping.",
+          "timestamp": "2024-01-16T18:30:00Z",
+          "reactions": {
+            "likes": 14,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T16:30:00Z"
+    },
+    {
+      "id": 16,
+      "userId": "user1313",
+      "title": "Coral reef conservation dive",
+      "body": "Spent the day documenting coral bleaching patterns for our research project. While concerning, we're seeing some resilient species adapting. Hope for our reefs! 🌊",
+      "reactions": {
+        "likes": 334,
+        "dislikes": 2,
+        "shares": 78,
+        "saves": 145
+      },
+      "tags": ["marineconservation", "coral", "research", "diving", "oceanhealth"],
+      "views": 876,
+      "images": [
+        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500",
+        "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=500",
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500"
+      ],
+      "videos": ["https://sample-videos.com/zip/10/mp4/mp4-35-underwater.mp4"],
+      "location": "Key Largo, FL",
+      "isPinned": true,
+      "comments": [
+        {
+          "id": 27,
+          "userId": "user505",
+          "body": "This is such important work! How can we help support coral conservation?",
+          "timestamp": "2024-01-16T19:15:00Z",
+          "reactions": {
+            "likes": 28,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 28,
+          "userId": "user1111",
+          "body": "Beautiful underwater photography! The coral formations are incredible.",
+          "timestamp": "2024-01-16T20:45:00Z",
+          "reactions": {
+            "likes": 16,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T18:00:00Z"
+    },
+    {
+      "id": 17,
+      "userId": "user1414",
+      "title": "Handmade jewelry collection",
+      "body": "Just finished this bohemian-inspired jewelry set using recycled silver and ethically sourced gemstones. Each piece tells a story of sustainability and craftsmanship ✨",
+      "reactions": {
+        "likes": 189,
+        "dislikes": 0,
+        "shares": 56,
+        "saves": 98
+      },
+      "tags": ["handmade", "jewelry", "sustainable", "bohemian", "crafts"],
+      "views": 445,
+      "images": [
+        "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=500",
+        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500",
+        "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=500"
+      ],
+      "videos": null,
+      "location": null,
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 29,
+          "userId": "user1212",
+          "body": "Absolutely gorgeous! The craftsmanship is incredible. Are these for sale?",
+          "timestamp": "2024-01-16T21:30:00Z",
+          "reactions": {
+            "likes": 21,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 30,
+          "userId": "user909",
+          "body": "These have such peaceful, zen energy! Perfect for meditation jewelry.",
+          "timestamp": "2024-01-16T22:15:00Z",
+          "reactions": {
+            "likes": 11,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T20:30:00Z"
     }
   ]
 }
