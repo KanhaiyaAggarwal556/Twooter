@@ -10,6 +10,16 @@ const DATA_FILE = path.join(__dirname, "posts-data.json");
 // Middleware
 app.use(cors()); // Allow cross-origin requests
 app.use(express.json()); // Parse JSON bodies
+app.use(express.static('dist', {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+    if (path.endsWith('.mjs')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+  }
+}));
 
 // ✅ ADD THIS: Serve static files from dist directory with correct MIME types
 app.use(express.static(path.join(__dirname, 'dist'), {
