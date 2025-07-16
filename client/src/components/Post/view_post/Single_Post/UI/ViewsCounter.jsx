@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import "../style/ViewsCounter.css";
 
 export default function ViewsCounter({ views }) {
   return (
@@ -7,7 +8,7 @@ export default function ViewsCounter({ views }) {
         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
         <circle cx="12" cy="12" r="3"/>
       </svg>
-      <small>{views} views</small>
+      <small>{views}</small>
     </div>
   );
 }

@@ -4,14 +4,12 @@ import PostHeader from "./components/PostHeader";
 import PostContent from "./components/PostContent";
 import PostActions from "./components/PostActions";
 import PostComments from "./components/PostComments";
-import UserModal from "./UI/UserModal";
-import { samplePost } from "./data/sampleData";
 import "./style/post.css";
+import UserPost from "./UserPost";
 
-export default function Post({ post = samplePost, onDelete }) {
+export default function Post({ post, onDelete }) {
   // State management
   const [showDropdown, setShowDropdown] = useState(false);
-  const [showUserModal, setShowUserModal] = useState(false);
   const [showComments, setShowComments] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -115,15 +113,9 @@ export default function Post({ post = samplePost, onDelete }) {
             onComments={handleComments}
           />
 
-          <PostComments showComments={showComments} />
+          <PostComments showComments={showComments} comments={post.comments} />
         </div>
       </div>
-
-      <UserModal
-        show={showUserModal}
-        post={post}
-        onClose={() => setShowUserModal(false)}
-      />
     </>
   );
 }
@@ -132,44 +124,42 @@ export default function Post({ post = samplePost, onDelete }) {
 Post.propTypes = {
   post: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    user: PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      name: PropTypes.string.isRequired,
-      avatar: PropTypes.string,
-      username: PropTypes.string,
-    }).isRequired,
-    content: PropTypes.string.isRequired,
-    timestamp: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date),
-    ]).isRequired,
+    userId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
+    username: PropTypes.string.isRequired,
+    UsersProfilePic: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
     reactions: PropTypes.shape({
       likes: PropTypes.number.isRequired,
       dislikes: PropTypes.number.isRequired,
     }).isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string),
+    views: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(PropTypes.string),
+    videos: PropTypes.arrayOf(PropTypes.string),
     comments: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
           .isRequired,
-        user: PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          avatar: PropTypes.string,
+        userId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+          .isRequired,
+        username: PropTypes.string.isRequired,
+        UsersProfilePic: PropTypes.string,
+        body: PropTypes.string.isRequired,
+        timestamp: PropTypes.string.isRequired,
+        reactions: PropTypes.shape({
+          likes: PropTypes.number.isRequired,
+          dislikes: PropTypes.number.isRequired,
         }).isRequired,
-        content: PropTypes.string.isRequired,
-        timestamp: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.instanceOf(Date),
-        ]).isRequired,
       })
     ),
-    image: PropTypes.string,
-    video: PropTypes.string,
-  }),
+    timestamp: PropTypes.string.isRequired,
+  }).isRequired,
   onDelete: PropTypes.func,
 };
 
-// Default props (optional, since you're using default parameters)
+// Default props
 Post.defaultProps = {
-  post: samplePost,
   onDelete: null,
 };

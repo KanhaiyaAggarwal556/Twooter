@@ -1,4 +1,4 @@
-// RightSidebar.jsx - Updated to show Login/SignUp pages
+// RightSidebar.jsx - Updated to hide search bar on /search page
 import React, { useState, useEffect, useRef } from 'react';
 import { Search as SearchIcon, User, Grid3X3, X } from 'lucide-react';
 import Search from './Search';
@@ -8,7 +8,7 @@ import SearchResults from './SearchResults';
 import FeaturePanel from './FeaturePanel/FeaturePanel';
 import { useSearch, useAuth } from './hooks';
 import ChatBot from './ChatBot';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './styles.css';
 
 const RightSidebar = () => {
@@ -18,14 +18,12 @@ const RightSidebar = () => {
   const [isMobileFeaturePanelOpen, setIsMobileFeaturePanelOpen] = useState(false);
   const [currentView, setCurrentView] = useState('main');
   const [searchResults, setSearchResults] = useState(null);
-  
-  // Add ChatBot state
   const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   
   const mobileUserMenuRef = useRef(null);
-  const mobileSearchRef = useRef(null);
   const mobileFeaturePanelRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const {
     searchTerm,
@@ -35,8 +33,7 @@ const RightSidebar = () => {
     suggestions,
     searchRef,
     handleSearch: originalHandleSearch,
-    handleSuggestionClick,
-    handleBackToMain: originalBackToMain
+    handleSuggestionClick
   } = useSearch();
 
   const {
@@ -46,22 +43,23 @@ const RightSidebar = () => {
     handleLogout
   } = useAuth();
 
+  // Check if we're on the search page
+  const isOnSearchPage = location.pathname === '/search';
+
   // ChatBot toggle handler
   const handleChatBotToggle = () => {
     setIsChatBotOpen(!isChatBotOpen);
   };
 
-  // Enhanced back to main handler
+  // Back to main handler
   const handleBackToMain = () => {
     setCurrentView('main');
     setSearchResults(null);
     setIsMobileFeaturePanelOpen(false);
-    if (originalBackToMain) {
-      originalBackToMain();
-    }
+    setIsMobileSearchOpen(false);
   };
 
-  // Login/SignUp handlers - Updated to show components
+  // Login/SignUp handlers
   const handleLogin = () => {
     setCurrentView('login');
     setIsUserMenuOpen(false);
@@ -78,43 +76,23 @@ const RightSidebar = () => {
 
   // Handle successful login/signup
   const handleLoginSuccess = (userData) => {
-    // Handle successful login - you can update auth state here
     console.log('Login successful:', userData);
     setCurrentView('main');
-    // You might want to update the auth state here
   };
 
   const handleSignupSuccess = (userData) => {
-    // Handle successful signup - you can update auth state here
     console.log('Signup successful:', userData);
     setCurrentView('main');
-    // You might want to update the auth state here
   };
 
-  // Enhanced search handler
+  // Search handler - navigate to search page instead of changing view
   const handleSearch = async (query) => {
     setSearchTerm(query);
-    setCurrentView('search');
     setIsMobileSearchOpen(false);
     setIsMobileFeaturePanelOpen(false);
     
-    try {
-      const results = await originalHandleSearch(query);
-      setSearchResults(results);
-    } catch (error) {
-      setSearchResults({
-        query: query,
-        results: [
-          { id: 1, title: `Result for "${query}"`, description: 'This is a mock search result' },
-          { id: 2, title: `Another result for "${query}"`, description: 'This is another mock result' }
-        ]
-      });
-    }
-  };
-
-  // Enhanced search handler for feature panel
-  const handleFeatureSearch = (query) => {
-    handleSearch(query);
+    // Navigate to search page with query parameter
+    navigate(`/search?q=${encodeURIComponent(query)}`);
   };
 
   // Enhanced suggestion click handler
@@ -190,13 +168,13 @@ const RightSidebar = () => {
   const handleMobileLogin = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    navigate("/login")
+    navigate("/login");
   };
 
   const handleMobileSignup = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    navigate("/signup")
+    navigate("/signup");
   };
 
   const handleMobileLogout = (e) => {
@@ -206,7 +184,7 @@ const RightSidebar = () => {
     setIsMobileUserMenuOpen(false);
   };
 
-  // Enhanced main content renderer
+  // Main content renderer
   const renderMainContent = () => {
     switch (currentView) {
       case 'search':
@@ -237,7 +215,7 @@ const RightSidebar = () => {
       default:
         return (
           <FeaturePanel
-            onSearch={handleFeatureSearch}
+            onSearch={handleSearch}
             onBackToMain={handleBackToMain}
             searchTerm={searchTerm}
             isMobile={isMobile}
@@ -246,34 +224,38 @@ const RightSidebar = () => {
     }
   };
 
+  // Check if we should show the search bar (not on search page)
+  const shouldShowSearchBar = !isOnSearchPage;
+
   // ==========================================
-  // MOBILE-ONLY RENDER - Show only icons + floating feature button
+  // MOBILE RENDER
   // ==========================================
   if (isMobile) {
     return (
       <>
-        {/* Mobile Header - Only Icons */}
+        {/* Mobile Header Icons - Only show search icon when search bar should be visible */}
         <div className="mobile-header-icons-container">
           <div className="mobile-header-spacer"></div>
           
           <div className="mobile-header-icons">
-            {/* Mobile Search Button */}
-            <button
-              ref={mobileSearchRef}
-              className="mobile-search-icon"
-              onClick={handleMobileSearchOpen}
-              onTouchEnd={handleMobileSearchOpen}
-              onMouseDown={(e) => e.preventDefault()}
-              aria-label="Open search"
-              type="button"
-              style={{
-                WebkitTapHighlightColor: 'transparent',
-                touchAction: 'manipulation',
-                userSelect: 'none'
-              }}
-            >
-              <SearchIcon size={24} />
-            </button>
+            {/* Mobile Search Button - Only show when search bar should be visible */}
+            {shouldShowSearchBar && (
+              <button
+                className="mobile-search-icon"
+                onClick={handleMobileSearchOpen}
+                onTouchEnd={handleMobileSearchOpen}
+                onMouseDown={(e) => e.preventDefault()}
+                aria-label="Open search"
+                type="button"
+                style={{
+                  WebkitTapHighlightColor: 'transparent',
+                  touchAction: 'manipulation',
+                  userSelect: 'none'
+                }}
+              >
+                <SearchIcon size={24} />
+              </button>
+            )}
 
             {/* Mobile User Menu */}
             <div className="mobile-user-menu" ref={mobileUserMenuRef}>
@@ -336,68 +318,70 @@ const RightSidebar = () => {
           </div>
         </div>
 
-        {/* Mobile Search Component - Only shows when opened */}
-        <MobileSearch
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          isMobileSearchOpen={isMobileSearchOpen}
-          setIsMobileSearchOpen={setIsMobileSearchOpen}
-          onSearch={handleSearch}
-          suggestions={suggestions}
-          onSuggestionClick={handleSuggestionClickEnhanced}
-        />
-
-        {/* Mobile Main Content - Shows search results, login, signup, or feature panel */}
-        {(currentView === 'search' || currentView === 'login' || currentView === 'signup') && !isMobileSearchOpen && (
-          <div className="mobile-main-content">
-            {renderMainContent()}
-          </div>
+        {/* Mobile Search Component - Only shows when opened and search bar should be visible */}
+        {shouldShowSearchBar && (
+          <MobileSearch
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            isMobileSearchOpen={isMobileSearchOpen}
+            setIsMobileSearchOpen={setIsMobileSearchOpen}
+            onSearch={handleSearch}
+            suggestions={suggestions}
+            onSuggestionClick={handleSuggestionClickEnhanced}
+          />
         )}
 
-        {/* Mobile Feature Panel Button - Floating at bottom right */}
-        {/* <div className="mobile-feature-panel-wrapper" ref={mobileFeaturePanelRef}>
-          <button
-            className="mobile-feature-panel-button"
-            onClick={handleMobileFeaturePanelToggle}
-            onTouchEnd={handleMobileFeaturePanelToggle}
-            onMouseDown={(e) => e.preventDefault()}
-            aria-label="Features"
-            type="button"
-            style={{
-              WebkitTapHighlightColor: 'transparent',
-              touchAction: 'manipulation',
-              userSelect: 'none'
-            }}
-          >
-            {isMobileFeaturePanelOpen ? <X size={24} /> : <Grid3X3 size={24} />}
-          </button>
+        {/* Mobile Main Content */}
+        <div className="mobile-main-content">
+          {renderMainContent()}
+        </div>
 
-          {isMobileFeaturePanelOpen && (
-            <div className="mobile-feature-panel-overlay">
-              <div className="mobile-feature-panel-content">
-                <div className="mobile-feature-panel-header">
-                  <h3>Features</h3>
-                  <button
-                    className="mobile-feature-panel-close"
-                    onClick={handleMobileFeaturePanelToggle}
-                    aria-label="Close features"
-                  >
-                    <X size={20} />
-                  </button>
-                </div>
-                <div className="mobile-feature-panel-body">
-                  <FeaturePanel
-                    onSearch={handleFeatureSearch}
-                    onBackToMain={handleBackToMain}
-                    searchTerm={searchTerm}
-                    isMobile={true} 
-                    isQuickAccess={false}
-                  />
+        {/* Mobile Feature Panel Button - Only show when search bar should be visible */}
+        {shouldShowSearchBar && (
+          <div className="mobile-feature-panel-wrapper" ref={mobileFeaturePanelRef}>
+            <button
+              className="mobile-feature-panel-button"
+              onClick={handleMobileFeaturePanelToggle}
+              onTouchEnd={handleMobileFeaturePanelToggle}
+              onMouseDown={(e) => e.preventDefault()}
+              aria-label="Features"
+              type="button"
+              style={{
+                WebkitTapHighlightColor: 'transparent',
+                touchAction: 'manipulation',
+                userSelect: 'none'
+              }}
+            >
+              {isMobileFeaturePanelOpen ? <X size={24} /> : <Grid3X3 size={24} />}
+            </button>
+
+            {isMobileFeaturePanelOpen && (
+              <div className="mobile-feature-panel-overlay">
+                <div className="mobile-feature-panel-content">
+                  <div className="mobile-feature-panel-header">
+                    <h3>Features</h3>
+                    <button
+                      className="mobile-feature-panel-close"
+                      onClick={handleMobileFeaturePanelToggle}
+                      aria-label="Close features"
+                    >
+                      <X size={20} />
+                    </button>
+                  </div>
+                  <div className="mobile-feature-panel-body">
+                    <FeaturePanel
+                      onSearch={handleSearch}
+                      onBackToMain={handleBackToMain}
+                      searchTerm={searchTerm}
+                      isMobile={true} 
+                      isQuickAccess={false}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-        </div> */}
+            )}
+          </div>
+        )}
 
         {/* ChatBot for Mobile */}
         <ChatBot
@@ -410,23 +394,25 @@ const RightSidebar = () => {
   }
 
   // ==========================================
-  // DESKTOP RENDER - Full functionality
+  // DESKTOP RENDER
   // ==========================================
   return (
     <>
       <div className="right-sidebar">
-        {/* Desktop Header */}
+        {/* Desktop Header - Only show search bar when shouldShowSearchBar is true */}
         <div className="right-sidebar__header">
-          <Search
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            isSearchFocused={isSearchFocused}
-            setIsSearchFocused={setIsSearchFocused}
-            onSearch={handleSearch}
-            suggestions={suggestions}
-            onSuggestionClick={handleSuggestionClickEnhanced}
-            searchRef={searchRef}
-          />
+          {shouldShowSearchBar && (
+            <Search
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              isSearchFocused={isSearchFocused}
+              setIsSearchFocused={setIsSearchFocused}
+              onSearch={handleSearch}
+              suggestions={suggestions}
+              onSuggestionClick={handleSuggestionClickEnhanced}
+              searchRef={searchRef}
+            />
+          )}
 
           <UserAccount
             isUserMenuOpen={isUserMenuOpen}

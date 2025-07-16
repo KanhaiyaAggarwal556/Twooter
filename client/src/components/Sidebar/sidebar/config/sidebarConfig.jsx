@@ -22,8 +22,8 @@ export const NAV_ITEMS = [
   { to: "/", icon: <AiOutlineHome className="me-2" />, label: "Home" },
   { to: "/search", icon: <AiOutlineSearch className="me-2" />, label: "Search" },
   { to: "/notifications", icon: <AiOutlineBell className="me-2" />, label: "Notifications" },
-  { to: "/tweety", icon: <AiOutlineMessage className="me-2" />, label: "Tweety" },
-  { to: "/aboutus", icon: <AiOutlineInfoCircle className="me-2" />, label: "About Us" },
-  { to: "/contact-us", icon: <AiOutlineMail className="me-2" />, label: "Contact Us" },
+  { to: "/i/twitty", icon: <AiOutlineMessage className="me-2" />, label: "Tweety" },
+  { to: "/about", icon: <AiOutlineInfoCircle className="me-2" />, label: "About Us" },
+  { to: "/contact", icon: <AiOutlineMail className="me-2" />, label: "Contact Us" },
   { to: "/login", icon: <AiOutlineLogin className="me-2" />, label: "Log in" },
 ];

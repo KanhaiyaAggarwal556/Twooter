@@ -13,7 +13,7 @@ const CreatePostButton = ({ pathname, onLinkClick, isResponsive = false }) => (
     }}
   >
     <Link
-      to="/create-post"
+      to="/createpost"
       className="btn fw-bold d-flex align-items-center justify-content-center"
       style={{
         backgroundColor:

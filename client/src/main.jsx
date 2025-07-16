@@ -1,38 +1,44 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import CreatePost from "./components/Post/createpost/CreatePost.jsx";
-import Posts from "./components/Post/view_post/Posts/Posts.jsx";
-import AboutUs from "./components/AboutUs/AboutUs.jsx";
-import ContactUs from "./components/ContactUs/Contact.jsx";
-import Search from "./components/SearchPage/search_page.jsx";
-import Tweety from "./components/Tweety/tweety.jsx";
-import Notifications from "./components/Notifications/notifications.jsx";
-import LoginPage from "./components/Account/Login"
-import SignUp from "./components/Account/SignUp"
-import PasswordResetSystem from "./components/Account/ForgotPassword.jsx";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      { path: "/", element: <Posts /> },
-      { path: "/create-post", element: <CreatePost /> },
-      { path: "/contact-us", element: <ContactUs /> },
-      { path: "/search", element: <Search /> },
-      { path: "/Tweety", element: <Tweety /> },
-      { path: "/aboutUs", element: <AboutUs /> },
-      { path: "/notifications", element: <Notifications /> },
-    ],
-  },
-  { path: "/login", element: <LoginPage /> },
-  { path: "/signup", element: <SignUp /> },
-  { path: "/forgotpassword", element: <PasswordResetSystem /> },
-]);
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./routes/HomePage/HomePage.jsx";
+import SearchPage from "./routes/SearchPage/SearchPage.jsx";
+import ProfilePage from "./routes/ProfilePage/ProfilePage.jsx";
+import CreatePostPage from "./routes/CreatePostPage/CreatePostPage.jsx";
+import PostPage from "./routes/PostPage/PostPage.jsx";
+import Twitty from "./routes/TwittyPage/TwittyPage.jsx";
+import Auth from "./routes/AuthPage/UserAuth.jsx";
+import MainLayoutPage from "./routes/Layout/MainLayoutPage/MainLayoutPage.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import SearchPageLayout from "./routes/Layout/SearchPageLayout.jsx";
+import Notification from "./routes/Notification/Notification.jsx";
+import ContactPage from "./routes/ContactPage/ContactPage.jsx";
+import PhotoPage from "./routes/PhotoPage/PhotoPage.jsx";
+import UserPageLayout from "./routes/Layout/UserPageLayout/UserPageLayout.jsx";
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayoutPage />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/createpost" element={<CreatePostPage />} />
+          <Route path="/:username/status/:id" element={<PostPage />} />
+          <Route path="/notifications" element={<Notification />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/search" element={<SearchPage />} />
+        </Route>
+        <Route element={<SearchPageLayout />}>
+          <Route path="/i/twitty" element={<Twitty />} />
+        </Route>
+        <Route element={<UserPageLayout />}>
+          <Route path="/:username" element={<ProfilePage />} />
+        </Route>
+        <Route
+          path="/:username/status/:id/photo/:num"
+          element={<PhotoPage />}
+        />
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>
 );

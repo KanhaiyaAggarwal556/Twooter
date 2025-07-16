@@ -1,0 +1,353 @@
+{
+  "UserData": [
+    {
+      "userId": "user123",
+      "username": "john_doe",
+      "displayName": "John Doe",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=300&fit=crop",
+      "email": "john.doe@email.com",
+      "contactNumber": "+1-555-0123",
+      "bio": "Adventure enthusiast and nature lover. Always looking for the next mountain to climb! 🏔️",
+      "location": "San Francisco, CA",
+      "website": "https://johndoe-adventures.com",
+      "joinDate": "2023-05-15T00:00:00Z",
+      "isVerified": false,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T14:30:00Z",
+      "socialStats": {
+        "followers": 1247,
+        "following": 389,
+        "posts": 1
+      },
+      "interests": ["hiking", "photography", "travel", "nature"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": false,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "nature",
+        "accentColor": "#4A90E2",
+        "backgroundType": "image"
+      }
+    },
+    {
+      "userId": "user456",
+      "username": "jane_smith",
+      "displayName": "Jane Smith",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1494790108755-2616b9f8e536?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=300&fit=crop",
+      "email": "jane.smith@email.com",
+      "contactNumber": "+1-555-0456",
+      "bio": "Home chef sharing family recipes and culinary adventures. Food is love! 👩‍🍳",
+      "location": "Austin, TX",
+      "website": "https://janes-kitchen.blog",
+      "joinDate": "2023-03-22T00:00:00Z",
+      "isVerified": true,
+      "isOnline": false,
+      "lastSeen": "2024-01-16T12:15:00Z",
+      "socialStats": {
+        "followers": 2156,
+        "following": 445,
+        "posts": 1
+      },
+      "interests": [
+        "cooking",
+        "baking",
+        "food photography",
+        "recipe development"
+      ],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": false,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "warm",
+        "accentColor": "#FF6B6B",
+        "backgroundType": "gradient"
+      }
+    },
+    {
+      "userId": "user789",
+      "username": "tech_guru",
+      "displayName": "Alex Chen",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&h=300&fit=crop",
+      "email": "tech.guru@email.com",
+      "contactNumber": "+1-555-0789",
+      "bio": "Senior Software Engineer | JavaScript enthusiast | Sharing coding tips and tutorials 💻",
+      "location": "Seattle, WA",
+      "website": "https://alexchen.dev",
+      "joinDate": "2022-11-10T00:00:00Z",
+      "isVerified": true,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T15:00:00Z",
+      "socialStats": {
+        "followers": 5432,
+        "following": 234,
+        "posts": 1
+      },
+      "interests": ["javascript", "web development", "AI", "open source"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "dark",
+        "accentColor": "#00D4AA",
+        "backgroundType": "solid"
+      }
+    },
+    {
+      "userId": "user101",
+      "username": "sara_photo",
+      "displayName": "Sara Williams",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200&h=300&fit=crop",
+      "email": "sara.photo@email.com",
+      "contactNumber": "+1-555-0101",
+      "bio": "Professional photographer capturing life's beautiful moments 📸 Available for bookings",
+      "location": "New York, NY",
+      "website": "https://sarawilliams.photography",
+      "joinDate": "2023-01-08T00:00:00Z",
+      "isVerified": false,
+      "isOnline": false,
+      "lastSeen": "2024-01-16T10:45:00Z",
+      "socialStats": {
+        "followers": 3789,
+        "following": 567,
+        "posts": 1
+      },
+      "interests": [
+        "portrait photography",
+        "street photography",
+        "photo editing",
+        "workshops"
+      ],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "minimal",
+        "accentColor": "#8B5CF6",
+        "backgroundType": "image"
+      }
+    },
+    {
+      "userId": "user202",
+      "username": "fitness_mike",
+      "displayName": "Mike Johnson",
+      "UsersProfilePic": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=500&h=500&fit=crop&crop=face",
+      "coverPhoto": "https://images.unsplash.com/photo-1571019613914-85e2218e1b6f?w=1200&h=300&fit=crop",
+      "email": "fitness.mike@email.com",
+      "contactNumber": "+1-555-0202",
+      "bio": "Personal trainer helping you reach your fitness goals 💪 DM for coaching sessions",
+      "location": "Miami, FL",
+      "website": "https://mikefit.com",
+      "joinDate": "2023-07-01T00:00:00Z",
+      "isVerified": false,
+      "isOnline": true,
+      "lastSeen": "2024-01-16T14:45:00Z",
+      "socialStats": {
+        "followers": 1893,
+        "following": 312,
+        "posts": 1
+      },
+      "interests": ["fitness", "nutrition", "running", "strength training"],
+      "profilePrivacy": {
+        "profileVisibility": "public",
+        "contactVisible": true,
+        "postsVisible": "public"
+      },
+      "customization": {
+        "theme": "energetic",
+        "accentColor": "#FF4757",
+        "backgroundType": "gradient"
+      }
+    }
+  ],
+  "PostData": [
+    {
+      "id": 1,
+      "userId": "user123",
+      "title": "My weekend adventure",
+      "body": "Had an amazing time hiking in the mountains. The weather was perfect and the views were breathtaking!",
+      "reactions": {
+        "likes": 45,
+        "dislikes": 2,
+        "shares": 12,
+        "saves": 8
+      },
+      "tags": ["adventure", "nature", "hiking"],
+      "views": 128,
+      "images": [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500"
+      ],
+      "videos": ["https://sample-videos.com/zip/10/mp4/mp4-15-movie.mp4"],
+      "location": "Rocky Mountains, CO",
+      "isPinned": true,
+      "comments": [
+        {
+          "id": 1,
+          "userId": "user456",
+          "body": "Looks amazing! Which trail did you take?",
+          "timestamp": "2024-01-15T10:30:00Z",
+          "reactions": {
+            "likes": 3,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 2,
+          "userId": "user789",
+          "body": "Great photos! The mountain views are stunning.",
+          "timestamp": "2024-01-15T14:45:00Z",
+          "reactions": {
+            "likes": 1,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-15T08:00:00Z"
+    },
+    {
+      "id": 2,
+      "userId": "user456",
+      "title": "New recipe I tried",
+      "body": "Finally mastered my grandmother's secret pasta recipe. It took me three attempts but it was worth it!",
+      "reactions": {
+        "likes": 32,
+        "dislikes": 1,
+        "shares": 15,
+        "saves": 23
+      },
+      "tags": ["cooking", "recipe", "food"],
+      "views": 67,
+      "images": [
+        "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500",
+        "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500",
+        "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500"
+      ],
+      "videos": null,
+      "location": null,
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 3,
+          "userId": "user123",
+          "body": "Would love to try this recipe! Can you share it?",
+          "timestamp": "2024-01-15T16:20:00Z",
+          "reactions": {
+            "likes": 2,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": 3,
+      "userId": "user789",
+      "title": "Quick coding tip",
+      "body": "Here's a simple JavaScript trick that can save you tons of time when working with arrays.",
+      "reactions": {
+        "likes": 78,
+        "dislikes": 3,
+        "shares": 34,
+        "saves": 67
+      },
+      "tags": ["javascript", "programming", "tips"],
+      "views": 234,
+      "images": null,
+      "videos": null,
+      "location": null,
+      "isPinned": true,
+      "comments": [],
+      "timestamp": "2024-01-15T18:30:00Z"
+    },
+    {
+      "id": 4,
+      "userId": "user101",
+      "title": "Photography workshop",
+      "body": "Just attended an amazing photography workshop downtown. Learned so much about lighting and composition!",
+      "reactions": {
+        "likes": 25,
+        "dislikes": 0,
+        "shares": 6,
+        "saves": 4
+      },
+      "tags": ["photography", "workshop", "learning"],
+      "views": 89,
+      "images": [
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+        "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=500"
+      ],
+      "videos": null,
+      "location": "New York, NY",
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 4,
+          "userId": "user456",
+          "body": "Those photos look professional! Great work!",
+          "timestamp": "2024-01-16T09:15:00Z",
+          "reactions": {
+            "likes": 4,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T07:45:00Z"
+    },
+    {
+      "id": 5,
+      "userId": "user202",
+      "title": "Morning workout routine",
+      "body": "Started my day with a 5K run followed by some strength training. Feeling energized and ready for the day!",
+      "reactions": {
+        "likes": 18,
+        "dislikes": 1,
+        "shares": 3,
+        "saves": 7
+      },
+      "tags": ["fitness", "running", "workout", "morning"],
+      "views": 45,
+      "images": null,
+      "videos": ["https://sample-videos.com/zip/10/mp4/mp4-10-workout.mp4"],
+      "location": "Miami Beach, FL",
+      "isPinned": false,
+      "comments": [
+        {
+          "id": 5,
+          "userId": "user123",
+          "body": "Inspiring! What's your usual workout schedule?",
+          "timestamp": "2024-01-16T11:30:00Z",
+          "reactions": {
+            "likes": 1,
+            "dislikes": 0
+          }
+        },
+        {
+          "id": 6,
+          "userId": "user789",
+          "body": "I need to get back into running. Any tips for beginners?",
+          "timestamp": "2024-01-16T13:20:00Z",
+          "reactions": {
+            "likes": 2,
+            "dislikes": 0
+          }
+        }
+      ],
+      "timestamp": "2024-01-16T06:30:00Z"
+    }
+  ]
+}

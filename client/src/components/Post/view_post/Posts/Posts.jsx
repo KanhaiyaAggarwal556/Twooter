@@ -15,7 +15,7 @@ export default function Posts() {
   const handleSectionToggle = (section) => {
     setActiveSection(section);
   };
-
+  console.log(postList);
   return (
     <div className="posts-container">
       <Header 

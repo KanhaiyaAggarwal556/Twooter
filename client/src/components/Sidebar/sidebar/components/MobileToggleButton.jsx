@@ -6,11 +6,11 @@ const MobileToggleButton = ({ open, setOpen }) => (
   <button
     className="btn d-lg-none position-fixed"
     style={{ 
-      top: 10, 
-      left: 10, 
-      zIndex: 10,
+      top: 15, 
+      width: 20,
+      zIndex:10,
       backgroundColor: SIDEBAR_CONFIG.backgroundColor,
-      border: "1px solid #333",
+      // border: "1px solid #333",
       color: "#fff"
     }}
     onClick={() => setOpen((v) => !v)}

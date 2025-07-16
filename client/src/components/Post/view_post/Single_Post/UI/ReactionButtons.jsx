@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+import "../style/ReactionButtons.css";
 
 export default function ReactionButtons({
   currentLikes,
@@ -9,8 +11,22 @@ export default function ReactionButtons({
   dislikeAnimation,
   onLike,
   onDislike,
-  onComments
+  onComments,
+  onShare,
+  post // Add post prop to access userId and id
 }) {
+  const navigate = useNavigate();
+
+  const handleCommentClick = () => {
+    // Navigate to the user's status page
+    navigate(`/${post.userId}/status/${post.id}`);
+    
+    // Call the original onComments function if needed
+    if (onComments) {
+      onComments();
+    }
+  };
+
   return (
     <div className="post-reactions">
       {/* Like Button */}
@@ -42,7 +58,7 @@ export default function ReactionButtons({
       {/* Comment Button */}
       <button 
         className="post-action-btn"
-        onClick={onComments}
+        onClick={handleCommentClick}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -62,7 +78,12 @@ ReactionButtons.propTypes = {
   dislikeAnimation: PropTypes.bool,
   onLike: PropTypes.func.isRequired,
   onDislike: PropTypes.func.isRequired,
-  onComments: PropTypes.func.isRequired,
+  onComments: PropTypes.func,
+  onShare: PropTypes.func,
+  post: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    userId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  }).isRequired,
 };
 
 ReactionButtons.defaultProps = {
@@ -72,4 +93,6 @@ ReactionButtons.defaultProps = {
   userDisliked: false,
   likeAnimation: false,
   dislikeAnimation: false,
+  onComments: null,
+  onShare: null,
 };

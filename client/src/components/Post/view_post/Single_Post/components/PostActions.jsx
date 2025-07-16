@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import ReactionButtons from "../UI/ReactionButtons";
-import ViewsCounter from "../UI/ViewsCounter";
+import ShareAndViewsCounter from "../UI/ShareAndViewsCounter";
+import "../style/PostAction.css";
 
-export default function PostActions({ 
+export default function PostActions({
   post,
   currentLikes,
   currentDislikes,
@@ -12,7 +13,10 @@ export default function PostActions({
   dislikeAnimation,
   onLike,
   onDislike,
-  onComments 
+  onComments,
+  onShare,
+  shareCount,
+  userShared,
 }) {
   return (
     <div className="post-actions">
@@ -26,9 +30,17 @@ export default function PostActions({
         onLike={onLike}
         onDislike={onDislike}
         onComments={onComments}
+        onShare={onShare}
+        post={post}
       />
-      
-      <ViewsCounter views={post.views} />
+
+      <ShareAndViewsCounter 
+        views={post.views}
+        onShare={onShare}
+        post={post}
+        shareCount={shareCount}
+        userShared={userShared}
+      />
     </div>
   );
 }
@@ -36,7 +48,11 @@ export default function PostActions({
 // PropTypes validation
 PostActions.propTypes = {
   post: PropTypes.shape({
-    views: PropTypes.number.isRequired
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    userId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    views: PropTypes.number.isRequired,
+    username: PropTypes.string,
+    content: PropTypes.string,
   }).isRequired,
   currentLikes: PropTypes.number.isRequired,
   currentDislikes: PropTypes.number.isRequired,
@@ -46,5 +62,8 @@ PostActions.propTypes = {
   dislikeAnimation: PropTypes.bool.isRequired,
   onLike: PropTypes.func.isRequired,
   onDislike: PropTypes.func.isRequired,
-  onComments: PropTypes.func.isRequired
+  onComments: PropTypes.func,
+  onShare: PropTypes.func,
+  shareCount: PropTypes.number,
+  userShared: PropTypes.bool,
 };

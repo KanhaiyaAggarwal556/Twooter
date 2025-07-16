@@ -369,16 +369,16 @@ color: white;
   }
   
   .chatbot-window {
-    width: 100%;
-    height: 70vh;
+    width: 70%;
+    height: 50vh;
     max-height: 500px;
     bottom: 80px;
-    right: 0;
+    right: 100px;
     left: 0;
   }
   
   .chatbot-bottom-left .chatbot-window {
-    left: 0;
+    left: 100px;
     right: 0;
   }
   
