@@ -10,6 +10,16 @@ const DATA_FILE = path.join(__dirname, "posts-data.json");
 // Middleware
 app.use(cors()); // Allow cross-origin requests
 app.use(express.json()); // Parse JSON bodies
+app.use(express.static('dist', {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+    if (path.endsWith('.mjs')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+  }
+}));
 
 // Helper functions for file operations
 async function readDataFromFile() {
