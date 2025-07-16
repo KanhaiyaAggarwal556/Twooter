@@ -72,7 +72,7 @@ export default function PostsProvider({ children }) {
     const signal = controller.signal;
     setFetching(true);
     
-    fetch("http://localhost:3000/api/posts", { signal })
+    fetch("https://twooter-backend.onrender.com/api/posts", { signal })
       .then((res) => res.json())
       .then((data) => {
         // Updated to handle new database structure
