@@ -4,14 +4,14 @@ import ReportModal from './ReportModal';
 import BlockModal from './BlockModal';
 import "../style/PostDropdown.css";
 
-const PostDropdown = ({ 
+export default function PostDropdown ({ 
   show, 
   setShow, 
   post,
   currentUserId,
   onDelete,
   onPostRemoved
-}) => {
+}) {
   const dropdownRef = useRef(null);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showBlockModal, setShowBlockModal] = useState(false);
@@ -189,7 +189,7 @@ const PostDropdown = ({
       />
     </>
   );
-};
+}
 
 PostDropdown.propTypes = {
   show: PropTypes.bool.isRequired,
@@ -204,4 +204,3 @@ PostDropdown.propTypes = {
   onPostRemoved: PropTypes.func.isRequired,
 };
 
-export default PostDropdown;
