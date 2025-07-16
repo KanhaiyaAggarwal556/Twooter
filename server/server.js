@@ -4,40 +4,12 @@ const fs = require("fs").promises;
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;  // Use environment PORT for deployment
+const PORT = 3000;
 const DATA_FILE = path.join(__dirname, "posts-data.json");
 
 // Middleware
 app.use(cors()); // Allow cross-origin requests
 app.use(express.json()); // Parse JSON bodies
-app.use(express.static('dist', {
-  setHeaders: (res, path) => {
-    if (path.endsWith('.js')) {
-      res.setHeader('Content-Type', 'application/javascript');
-    }
-    if (path.endsWith('.mjs')) {
-      res.setHeader('Content-Type', 'application/javascript');
-    }
-  }
-}));
-
-// ✅ ADD THIS: Serve static files from dist directory with correct MIME types
-app.use(express.static(path.join(__dirname, 'dist'), {
-  setHeaders: (res, path) => {
-    if (path.endsWith('.js')) {
-      res.setHeader('Content-Type', 'application/javascript');
-    }
-    if (path.endsWith('.mjs')) {
-      res.setHeader('Content-Type', 'application/javascript');
-    }
-    if (path.endsWith('.css')) {
-      res.setHeader('Content-Type', 'text/css');
-    }
-    if (path.endsWith('.html')) {
-      res.setHeader('Content-Type', 'text/html');
-    }
-  }
-}));
 
 // Helper functions for file operations
 async function readDataFromFile() {
@@ -562,16 +534,6 @@ app.delete("/api/posts/:id", async (req, res) => {
   }
 });
 
-// ✅ ADD THIS: Serve React app for all non-API routes (SPA routing)
-app.get('/*', (req, res) => {
-  // Only serve index.html for non-API routes
-  if (!req.path.startsWith('/api/')) {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-  } else {
-    res.status(404).json({ error: 'API endpoint not found' });
-  }
-});
-
 // Health check endpoint
 app.get("/health", (req, res) => {
   res.json({
@@ -583,11 +545,12 @@ app.get("/health", (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📡 Posts API available at /api/posts`);
-  console.log(`👥 Users API available at /api/users`);
-  console.log(`📝 User Posts API available at /api/users/:userId/posts`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`📡 Posts API available at http://localhost:${PORT}/api/posts`);
+  console.log(`👥 Users API available at http://localhost:${PORT}/api/users`);
+  console.log(
+    `📝 User Posts API available at http://localhost:${PORT}/api/users/:userId/posts`
+  );
   console.log(`💾 Data stored in: ${DATA_FILE}`);
-  console.log(`🔍 Health check: /health`);
-  console.log(`🌐 Serving static files from: ${path.join(__dirname, 'dist')}`);
+  console.log(`🔍 Health check: http://localhost:${PORT}/health`);
 });
